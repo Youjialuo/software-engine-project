@@ -79,9 +79,11 @@
 > **ZH** : 用例是系统的一项**可见功能**。用**椭圆**表示。名称**必须**用**动词不定式**。
 
 `
+```
   ┌──────────────────┐
   │  S'authentifier  │   ← verbe à l'infinitif / 动词不定式
   └──────────────────┘
+```
 `
 
 > **⚠️ Piège / 陷阱** :
@@ -98,9 +100,11 @@
 
 `
     o
+```
    /|\  ────────────  ┌──────────────────┐
    / \                │  S'authentifier  │
   Client              └──────────────────┘
+```
 `
 
 ---
@@ -112,6 +116,7 @@
 > **ZH** : 框定系统范围的**矩形**。用例在**里面**，参与者在**外面**。
 
 `
+```
  ┌──────────────────────────────────────┐
  │           SYSTÈME / 系统              │
  │                                      │
@@ -120,19 +125,21 @@
  │  └──────────────┘  │compte        │  │
  │                    └──────────────┘  │
  └──────────────────────────────────────┘
+```
 `
 
 ---
 
 #### Élément ⑤ : Les Relations entre Cas / 用例间关系
 
-##### A) <<include>> / 包含 (Inclusion)
+##### A) `<<include>>` / 包含 (Inclusion)
 
 > **FR** : A **INCLUT TOUJOURS** B. B est **OBLIGATOIRE**. Flèche pointillée → vers le cas INCLUS.
 
 > **ZH** : A **总是包含** B。B 是**强制**的。虚线箭头 → 指向被包含的用例。
 
 `
+```
  ┌──────────────────┐
  │ Payer cotisation │
  └────────┬─────────┘
@@ -142,15 +149,17 @@
  │ Vérifier statut      │
  │ adhérent             │
  └──────────────────────┘
+```
 `
 
-##### B) <<extend>> / 扩展 (Extension)
+##### B) `<<extend>>` / 扩展 (Extension)
 
 > **FR** : B **ÉTEND** A de façon **OPTIONNELLE**. Flèche pointillée → vers le cas DE BASE.
 
 > **ZH** : B **可选地扩展** A。虚线箭头 → 指向基础用例。
 
 `
+```
  ┌──────────────────┐
  │ Consulter jeux   │
  └────────┬─────────┘
@@ -159,11 +168,12 @@
  ┌────────┴─────────┐
  │ Réserver jeu     │
  └──────────────────┘
+```
 `
 
 > **⚠️ Include vs Extend — La Différence CRUCIALE !**
 
-| Critère | <<include>> | <<extend>> |
+| Critère | `<<include>>` | `<<extend>>` |
 |---------|---------------|--------------|
 | **Obligation (FR)** | **TOUJOURS** | **OPTIONNEL** |
 | **Obligation (ZH)** | **总是** | **可选** |
@@ -177,6 +187,7 @@
 > **ZH** : **特化**用例继承**通用**用例。**实心**箭头 → 指向通用。
 
 `
+```
  ┌──────────┐
  │ Paiement │  ← général
  └────┬─────┘
@@ -184,6 +195,7 @@
  ┌────┴─────────┐
  │Paiement carte│  ← spécialisé
  └──────────────┘
+```
 `
 
 ---
@@ -294,6 +306,7 @@
 ### 2.2 Exemple Complet : ATM / 完整示例：取款机
 
 `
+```
                     ⬤
                     │
                     ↓
@@ -315,10 +328,12 @@
                     ↓
                    ◇  Code OK ?
                    │\
+```
                   /  \
             [OUI]/    \[NON]
                 /      \
                ↓        ↓
+```
        ┌───────────┐   ◇ 3e tentative ?
        │Saisir     │   │\
        │montant    │  /  \
@@ -351,6 +366,7 @@
      │
      ↓
      ◎
+```
 `
 
 ---
@@ -370,6 +386,7 @@
 ### 3.1 Structure d'une Classe / 类的结构
 
 `
+```
 ┌──────────────────────────┐
 │     Nom de la Classe     │  ← Compartiment 1 : NOM (obligatoire)
 │     类名                 │
@@ -381,6 +398,7 @@
 │ + méthode1() : Type      │  ← Compartiment 3 : MÉTHODES (optionnel)
 │ - méthode2() : void      │
 └──────────────────────────┘
+```
 `
 
 ---
@@ -484,6 +502,7 @@
 **② Cas d'Utilisation et Relations** :
 
 `
+```
                  ┌─────────────────────────────────────────────┐
                  │           SYSTÈME DE CAISSE                 │
                  │                                             │
@@ -520,14 +539,15 @@
       / \        │  │caisses           │                      │
   Responsable    │  └──────────────────┘                      │
                  └─────────────────────────────────────────────┘
+```
 `
 
 **③ Relations expliquées / 关系说明** :
 
 | Cas A | Relation | Cas B | Pourquoi ? / 为什么？ |
 |-------|----------|-------|----------------------|
-| Signaler fin vente | <<include>> → | Paiement | TOUJOURS obligatoire / 总是强制 |
-| Signaler fin vente | ← <<extend>> | Appliquer coupons | OPTIONNEL / 可选 |
+| Signaler fin vente | `<<include>>` → | Paiement | TOUJOURS obligatoire / 总是强制 |
+| Signaler fin vente | ← `<<extend>>` | Appliquer coupons | OPTIONNEL / 可选 |
 | Paiement | ← Généralisation | Paiement liquide/chèque/carte | « est-un » type de paiement |
 
 ---
@@ -541,6 +561,7 @@
 **Diagramme Complet / 完整图** :
 
 `
+```
                     ⬤
                     │
                     ↓
@@ -557,8 +578,10 @@
                     ↓
                    ◇  Valide ?
                    │\
+```
               [OUI]/  \[NON]
                   /    \
+```
                  ↓      ◎
           ┌───────────┐
           │Saisir code│
@@ -567,10 +590,12 @@
                 ↓
                ◇  Code OK ?
                │\
+```
               /  \
         [OUI]/    \[NON]
             /      \
            ↓        ↓
+```
     ┌───────────┐  ◇ 3e tentative ?
     │Saisir     │  │\
     │montant    │ /  \
@@ -603,6 +628,7 @@
     │
     ↓
     ◎
+```
 `
 
 ---
@@ -620,6 +646,7 @@
 **Exercice 2 — Classe Personne** :
 
 `
+```
 ┌──────────────────────────┐
 │        Personne          │
 ├──────────────────────────┤
@@ -638,6 +665,7 @@
 │ + calculerRevenus():float│
 │ + calculerCharges():float│
 └──────────────────────────┘
+```
 `
 
 **Exercice 3 — Multiplicité Magasin/Articles** :
@@ -669,8 +697,8 @@ Q3: Magasin ─────── Article     (article peut n'être proposé nul
 
 | Relation | Symbole | Mot-Clé (FR) | 关键词 (ZH) | Sens Flèche |
 |----------|---------|-------------|------------|-------------|
-| <<include>> | ⇢ <<include>> | TOUJOURS | 总是 | → cas INCLUS |
-| <<extend>> | ⇢ <<extend>> | OPTIONNEL | 可选 | → cas BASE |
+| `<<include>>` | ⇢ `<<include>>` | TOUJOURS | 总是 | → cas INCLUS |
+| `<<extend>>` | ⇢ `<<extend>>` | OPTIONNEL | 可选 | → cas BASE |
 | Généralisation UC | △ | Héritage de cas | 用例继承 | → cas GÉNÉRAL |
 | Généralisation Classe | △ | « est-un » | 「是一个」 | → classe PARENT |
 | Association | — | Lien simple | 简单连接 | (pas de flèche) |
@@ -696,7 +724,7 @@ Q3: Magasin ─────── Article     (article peut n'être proposé nul
 | # | Je sais... / 我能... | ✓ |
 |---|---|---|
 | 1 | Identifier les acteurs (principal vs secondaire) | ☐ |
-| 2 | Distinguer <<include>> (toujours) vs <<extend>> (optionnel) | ☐ |
+| 2 | Distinguer `<<include>>` (toujours) vs `<<extend>>` (optionnel) | ☐ |
 | 3 | Dessiner un diagramme de cas d'utilisation complet | ☐ |
 | 4 | Écrire un scénario textuel (nominal + alternatif) | ☐ |
 | 5 | Placer correctement les nœuds d'un diagramme d'activités | ☐ |
