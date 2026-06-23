@@ -51,13 +51,13 @@
 
 > **ZH** : 参与者是与系统交互的**外部实体**。它代表一个**角色**，不是具体的人。用**火柴人**图标表示。
 
-`
+```
     o       ← tête / 头
    /|\      ← corps + bras / 身体+手臂
    / \      ← jambes / 腿
 
   Client    ← nom du rôle écrit en dessous / 角色名写在下方
-`
+```
 
 **Types d'Acteurs / 参与者类型** :
 
@@ -78,13 +78,12 @@
 
 > **ZH** : 用例是系统的一项**可见功能**。用**椭圆**表示。名称**必须**用**动词不定式**。
 
-`
 ```
   ┌──────────────────┐
   │  S'authentifier  │   ← verbe à l'infinitif / 动词不定式
   └──────────────────┘
+
 ```
-`
 
 > **⚠️ Piège / 陷阱** :
 > - **FR** : JAMAIS « Authentification » (NOM). TOUJOURS « S'authentifier » (VERBE).
@@ -98,14 +97,14 @@
 
 > **ZH** : 连接参与者与用例的**简单直线**。表示：「该参与者**可以**执行此用例。」
 
-`
-    o
 ```
+    o
+
    /|\  ────────────  ┌──────────────────┐
    / \                │  S'authentifier  │
   Client              └──────────────────┘
+
 ```
-`
 
 ---
 
@@ -115,7 +114,6 @@
 
 > **ZH** : 框定系统范围的**矩形**。用例在**里面**，参与者在**外面**。
 
-`
 ```
  ┌──────────────────────────────────────┐
  │           SYSTÈME / 系统              │
@@ -125,8 +123,8 @@
  │  └──────────────┘  │compte        │  │
  │                    └──────────────┘  │
  └──────────────────────────────────────┘
+
 ```
-`
 
 ---
 
@@ -138,7 +136,6 @@
 
 > **ZH** : A **总是包含** B。B 是**强制**的。虚线箭头 → 指向被包含的用例。
 
-`
 ```
  ┌──────────────────┐
  │ Payer cotisation │
@@ -149,8 +146,8 @@
  │ Vérifier statut      │
  │ adhérent             │
  └──────────────────────┘
+
 ```
-`
 
 ##### B) `<<extend>>` / 扩展 (Extension)
 
@@ -158,7 +155,6 @@
 
 > **ZH** : B **可选地扩展** A。虚线箭头 → 指向基础用例。
 
-`
 ```
  ┌──────────────────┐
  │ Consulter jeux   │
@@ -168,8 +164,8 @@
  ┌────────┴─────────┐
  │ Réserver jeu     │
  └──────────────────┘
+
 ```
-`
 
 > **⚠️ Include vs Extend — La Différence CRUCIALE !**
 
@@ -186,7 +182,6 @@
 
 > **ZH** : **特化**用例继承**通用**用例。**实心**箭头 → 指向通用。
 
-`
 ```
  ┌──────────┐
  │ Paiement │  ← général
@@ -195,8 +190,8 @@
  ┌────┴─────────┐
  │Paiement carte│  ← spécialisé
  └──────────────┘
+
 ```
-`
 
 ---
 
@@ -305,7 +300,6 @@
 
 ### 2.2 Exemple Complet : ATM / 完整示例：取款机
 
-`
 ```
                     ⬤
                     │
@@ -328,11 +322,13 @@
                     ↓
                    ◇  Code OK ?
                    │\
+
 ```
                   /  \
             [OUI]/    \[NON]
                 /      \
                ↓        ↓
+
 ```
        ┌───────────┐   ◇ 3e tentative ?
        │Saisir     │   │\
@@ -366,8 +362,8 @@
      │
      ↓
      ◎
+
 ```
-`
 
 ---
 
@@ -385,7 +381,6 @@
 
 ### 3.1 Structure d'une Classe / 类的结构
 
-`
 ```
 ┌──────────────────────────┐
 │     Nom de la Classe     │  ← Compartiment 1 : NOM (obligatoire)
@@ -398,8 +393,8 @@
 │ + méthode1() : Type      │  ← Compartiment 3 : MÉTHODES (optionnel)
 │ - méthode2() : void      │
 └──────────────────────────┘
+
 ```
-`
 
 ---
 
@@ -501,7 +496,6 @@
 
 **② Cas d'Utilisation et Relations** :
 
-`
 ```
                  ┌─────────────────────────────────────────────┐
                  │           SYSTÈME DE CAISSE                 │
@@ -539,8 +533,8 @@
       / \        │  │caisses           │                      │
   Responsable    │  └──────────────────┘                      │
                  └─────────────────────────────────────────────┘
+
 ```
-`
 
 **③ Relations expliquées / 关系说明** :
 
@@ -560,7 +554,6 @@
 
 **Diagramme Complet / 完整图** :
 
-`
 ```
                     ⬤
                     │
@@ -578,9 +571,11 @@
                     ↓
                    ◇  Valide ?
                    │\
+
 ```
               [OUI]/  \[NON]
                   /    \
+
 ```
                  ↓      ◎
           ┌───────────┐
@@ -590,11 +585,13 @@
                 ↓
                ◇  Code OK ?
                │\
+
 ```
               /  \
         [OUI]/    \[NON]
             /      \
            ↓        ↓
+
 ```
     ┌───────────┐  ◇ 3e tentative ?
     │Saisir     │  │\
@@ -628,8 +625,8 @@
     │
     ↓
     ◎
+
 ```
-`
 
 ---
 
@@ -645,7 +642,6 @@
 
 **Exercice 2 — Classe Personne** :
 
-`
 ```
 ┌──────────────────────────┐
 │        Personne          │
@@ -665,12 +661,12 @@
 │ + calculerRevenus():float│
 │ + calculerCharges():float│
 └──────────────────────────┘
+
 ```
-`
 
 **Exercice 3 — Multiplicité Magasin/Articles** :
 
-`
+```
 Q1: Magasin ─────── Article     (1 magasin vend 1..* articles)
           1     1..*
 
@@ -679,7 +675,7 @@ Q2: Magasin ─────── Article     (articles vendus par +sieurs magas
 
 Q3: Magasin ─────── Article     (article peut n'être proposé nulle part)
          1..*   0..*
-`
+```
 
 **Exercice 4 — Type de Relation** :
 
