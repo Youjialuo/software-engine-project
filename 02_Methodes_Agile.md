@@ -255,7 +255,7 @@ En tant que [profil / 角色], je souhaite [objectif / 目标] afin de [résulta
 │                         SCRUM                                │
 ├────────────────┬──────────────────┬──────────────────────────┤
 │ 3 RÔLES        │ 3 ARTEFACTS      │ 4 ÉVÉNEMENTS             │
-│ 三种角色       │ 三种工件         │ 四种事件                 │
+│ 三种角色        │ 三种工件         │  四种事件                 │
 ├────────────────┼──────────────────┼──────────────────────────┤
 │ Product Owner  │ Product Backlog  │ Sprint Planning (max 8h) │
 │ (voix client)  │ (liste complète) │ Sprint计划会             │
